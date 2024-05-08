@@ -16,6 +16,8 @@ void update(sem_t *s1, char *shm, int amount,int sleep_duration){
     sprintf(shm,"%d",balance+amount);
     printf("New balance: %d\n",balance+amount);
     sleep(sleep_duration);
+    sem_post(s1);
+
 }
 
 int main(){
